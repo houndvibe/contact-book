@@ -1,0 +1,29 @@
+.Nav {
+  display: flex;
+  background: black;
+  color: white;
+  align-items: baseline;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+}
+
+.Nav__NavItem {
+  margin: 10px;
+}
+
+.Nav__NavItem__NavLink {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.Nav__NavItem__NavLink:hover {
+  border-bottom: 1px solid white;
+}
+
+.Nav__NavItem_Left {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: default;
+}
+

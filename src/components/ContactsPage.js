@@ -3,7 +3,7 @@ import "../css/ContactsPage.css";
 
 function ContactsPage(props) {
   return (
-    <div>
+    <div className="ContactsPage">
       CONTACTS
     </div>
   );

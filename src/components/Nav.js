@@ -6,6 +6,7 @@ import "../css/Nav.css";
 function Nav(props) {
   return (
     <div className="Nav">
+
       <div
         className="Nav__NavItem Nav__NavItem_Left"
         onMouseDown={(event) => event.preventDefault()}

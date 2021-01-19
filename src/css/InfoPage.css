@@ -1,0 +1,42 @@
+.InfoPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background:  rgba(0, 0, 0, 0.760) 60%
+}
+
+.InfoPage__Content {
+  color:white;
+  background: rgba(128, 128, 128, 0.219);
+  border: 1px solid rgba(0, 0, 0, 0.048);
+  border-radius: 10px;
+  padding: 50px;
+  margin-bottom: 70px;
+  transition: 1s;
+}
+.InfoPage__Content:hover {
+  padding: 100px;
+}
+
+.InfoPage__ContentLine {
+  padding: 5px;
+}
+
+.InfoPage__ContentLine_Line1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+.InfoPage__ContentLine_Line3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.InfoPage__ContentLine__LineHref {
+  text-decoration: none;
+  font-weight: bold;
+  color: grey
+}
+.InfoPage__ContentLine__LineHref:hover {
+  border-bottom: none;
+  border-bottom: 1px solid grey;
+}
