@@ -1,0 +1,18 @@
+{
+  "name": "contact-book",
+  "version": "1.0.0",
+  "description": "test-task for sibers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "contacts"
+  ],
+  "author": "Lipatov A.",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1"
+  }
+}
