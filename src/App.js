@@ -6,7 +6,6 @@ import MainWrapper from "./wrappers/MainWrapper";
 import ContactsPage from "./components/ContactsPage";
 import InfoPage from "./components/InfoPage";
 
-
 function App() {
   let routes = (
     <Switch>
