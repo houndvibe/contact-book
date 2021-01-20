@@ -1,10 +1,13 @@
 import React from 'react';
 import "../css/ContactsPage.css";
+import Toolbar from './Toolbar'
+import Workspace from './Workspace'
 
 function ContactsPage(props) {
   return (
     <div className="ContactsPage">
-      CONTACTS
+      <Toolbar />
+      <Workspace />
     </div>
   );
 }
