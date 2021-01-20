@@ -5,7 +5,7 @@ function Toolbar(props) {
   return (
     <div className='Toolbar'>
       Toolbar
-      <input value='test input'></input>
+      <input></input>
     </div>
   );
 }
