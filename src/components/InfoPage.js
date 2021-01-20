@@ -1,5 +1,5 @@
-import React from 'react';
-import '../css/InfoPage.css'
+import React from "react";
+import "../css/InfoPage.css";
 
 function InfoPage(props) {
   return (

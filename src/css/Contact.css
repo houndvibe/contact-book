@@ -1,0 +1,25 @@
+.Contact {
+  display: flex;
+  width: 100%;
+  border-radius: 4px;
+  display: flex;
+  padding: 2px;
+  font-size: 14px;
+  margin: 10px;
+  cursor: pointer;
+}
+.Contact:hover {
+  background: rgba(128, 128, 128, 0.164);
+}
+.Contact__number {
+  width: 4%;
+}
+.Contact__name {
+  width: 26%;
+}
+.Contact__phone {
+  width: 31%;
+}
+.Contact__email {
+  width: 39%;
+}

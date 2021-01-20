@@ -1,6 +1,4 @@
-import {
-  FETCH_CONTACTS
-} from "../types";
+import { FETCH_CONTACTS } from "../types";
 
 const initialState = {
   filterBy: "disabled",
@@ -15,5 +13,5 @@ export default function contactsReducer(state = initialState, action) {
         contactsList: action.payload,
       };
   }
-  return state
+  return state;
 }

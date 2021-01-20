@@ -1,4 +1,5 @@
-.Toolbar{
-  background: rgb(56, 38, 38);
-  height:6%;
+.Toolbar {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 96%;
 }

@@ -1,9 +1,9 @@
-import React from 'react';
-import '../css/Toolbar.css'
+import React from "react";
+import "../css/Toolbar.css";
 
 function Toolbar(props) {
   return (
-    <div className='Toolbar'>
+    <div className="Toolbar">
       Toolbar
       <input></input>
     </div>

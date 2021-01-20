@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background:  rgba(0, 0, 0, 0.760) 60%
+  background: rgba(0, 0, 0, 0.76) 60%;
 }
 
 .InfoPage__Content {
-  color:white;
+  color: white;
   background: rgba(128, 128, 128, 0.219);
   border: 1px solid rgba(0, 0, 0, 0.048);
   border-radius: 10px;
@@ -34,7 +34,7 @@
 .InfoPage__ContentLine__LineHref {
   text-decoration: none;
   font-weight: bold;
-  color: grey
+  color: grey;
 }
 .InfoPage__ContentLine__LineHref:hover {
   border-bottom: none;
