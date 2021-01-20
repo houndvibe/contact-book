@@ -4,7 +4,7 @@ import "./css/index.css";
 import App from "./App.js";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from './store/store'
+import { store } from "./store/store";
 
 const app = (
   <Provider store={store}>
@@ -15,12 +15,3 @@ const app = (
 );
 
 ReactDOM.render(app, document.getElementById("root"));
-
-
-
-
-
-
-
-
-

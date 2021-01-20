@@ -1,34 +1,20 @@
-import React, { useEffect } from 'react';
-import '../../css/ContactsList.css'
-import { connect, useDispatch } from 'react-redux'
-import { fetchContacts } from '../../store/actions/contactsActions'
+import React from "react";
+import "../../css/ContactsList.css";
+import Contact from "../ContactsList/Contact";
 
-function ContactsList(props) {
-
-  const dispatch = useDispatch();
-
-
-  useEffect(() => {
-    fetch('http://demo.sibers.com/users')
-      .then((response) => response.json())
-      .then((data) => dispatch(fetchContacts(data)))
-  }, [dispatch, fetchContacts])
-
-
+function ContactsList({ contactsList }) {
   return (
-    <div className='ContactsList'>
-      contactsList
+    <div className="ContactsList">
+      {contactsList.map((item, index) => (
+        <Contact
+          name={item.name}
+          phone={item.phone}
+          email={item.email}
+          number={index + 1}
+        />
+      ))}
     </div>
   );
-
 }
 
-const mapStateToProps = (state) => ({
-  contacts: state.contacts
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  fetchContacts: (data) => dispatch(fetchContacts(data))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);
+export default ContactsList;

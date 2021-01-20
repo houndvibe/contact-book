@@ -1,5 +1,10 @@
-.ContactsList{
-  background: grey;
-  height: 92%;
-  width: 92%;
+.ContactsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 94%;
+  overflow: scroll;
+  border: 1px solid rgba(128, 128, 128, 0.342);
+  border-radius: 6px;
+  padding: 10px;
 }

@@ -1,7 +1,9 @@
-.ContactsListWrapper{
+.ContactsListWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  background: indigo;
   width: 50%;
+  padding: 10px;
+  padding-bottom: 60px;
 }

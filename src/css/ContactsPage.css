@@ -1,17 +1,15 @@
-.ContactsPage{
-  color:white;
+.ContactsPage {
+  color: white;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .Table__Container::-webkit-scrollbar {
-    display: none;
-  }
-  .Table__Container {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  
+/* Hide scrollbar for IE, Edge and Firefox */
+.Table__Container::-webkit-scrollbar {
+  display: none;
+}
+.Table__Container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

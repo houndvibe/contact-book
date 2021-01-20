@@ -9,8 +9,8 @@ import InfoPage from "./components/InfoPage";
 function App() {
   let routes = (
     <Switch>
-      <Route path="/" exact component={InfoPage} />
       <Route path="/contacts" exact component={ContactsPage} />
+      <Route path="/" exact component={InfoPage} />
     </Switch>
   );
 

@@ -1,6 +1,4 @@
-import {
-  FETCH_CONTACTS
-} from "../types";
+import { FETCH_CONTACTS } from "../types";
 
 export const fetchContacts = (data) => {
   return (dispatch) => {

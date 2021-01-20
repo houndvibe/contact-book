@@ -1,6 +1,6 @@
-.Workspace{
-  background: green;
-  height: 94%;
+.Workspace {
+  background: rgba(0, 0, 0, 0.76) 60%;
+  height: 100%;
   display: flex;
   width: 100%;
 }
