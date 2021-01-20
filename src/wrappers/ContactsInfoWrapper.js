@@ -1,12 +1,22 @@
-import React from 'react';
-import '../css/ContactsInfoWrapper.css'
+import React from "react";
+import "../css/ContactsInfoWrapper.css";
+import { connect, useDispatch } from "react-redux";
+import Profile from "../components/ContactsInfo/Profile";
 
-function ContactsInfoWrapper(props) {
+function ContactsInfoWrapper({ active }) {
   return (
-    <div className='ContactsInfoWrapper'>
-      ContactsInfoWrapper
+    <div className="ContactsInfoWrapper">
+      <Profile active={active} />
     </div>
   );
 }
+const mapStateToProps = (state) => ({
+  active: state.contacts.active,
+});
 
-export default ContactsInfoWrapper;
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContactsInfoWrapper);
