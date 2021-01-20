@@ -7,9 +7,12 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 
-const initialState = {}
+const initialState = {};
 
-
-export const store = createStore(combineReducers({
-  contacts: contactsReducer,
-}), initialState, composeEnhancers(applyMiddleware(thunk)));
+export const store = createStore(
+  combineReducers({
+    contacts: contactsReducer,
+  }),
+  initialState,
+  composeEnhancers(applyMiddleware(thunk))
+);

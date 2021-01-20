@@ -1,0 +1,16 @@
+.InfoLine {
+  color: black;
+}
+.InfoLine__title {
+  font-weight: bold;
+}
+.InfoLine__title_main {
+  font-size: 20px;
+}
+.InfoLine__data {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 4px;
+  background: rgba(128, 128, 128, 0.26);
+}

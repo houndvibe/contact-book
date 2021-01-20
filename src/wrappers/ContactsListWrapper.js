@@ -3,9 +3,12 @@ import "../css/ContactsListWrapper.css";
 import ContactsList from "../components/ContactsList/ContactsList";
 import Toolbar from "../components/Toolbar";
 import { connect, useDispatch } from "react-redux";
-import { fetchContacts } from "../store/actions/contactsActions";
+import {
+  fetchContacts,
+  onContactSelect,
+} from "../store/actions/contactsActions";
 
-function ContactsListWrapper({ contacts }) {
+function ContactsListWrapper({ contacts, onContactSelect }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +20,7 @@ function ContactsListWrapper({ contacts }) {
   return (
     <div className="ContactsListWrapper">
       <Toolbar />
-      <ContactsList contactsList={contacts} />
+      <ContactsList contactsList={contacts} onContactSelect={onContactSelect} />
     </div>
   );
 }
@@ -27,7 +30,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchContacts: (data) => dispatch(fetchContacts(data)),
+  fetchContacts: (data) => fetchContacts(data),
+  onContactSelect: (contact) => dispatch(onContactSelect(contact)),
 });
 
 export default connect(

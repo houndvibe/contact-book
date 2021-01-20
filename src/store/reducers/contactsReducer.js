@@ -1,8 +1,9 @@
-import { FETCH_CONTACTS } from "../types";
+import { FETCH_CONTACTS, ON_CONTACT_SELECT } from "../types";
 
 const initialState = {
   filterBy: "disabled",
   contactsList: [],
+  active: {},
 };
 
 export default function contactsReducer(state = initialState, action) {
@@ -11,6 +12,12 @@ export default function contactsReducer(state = initialState, action) {
       return {
         ...state,
         contactsList: action.payload,
+      };
+
+    case ON_CONTACT_SELECT:
+      return {
+        ...state,
+        active: action.payload,
       };
   }
   return state;
