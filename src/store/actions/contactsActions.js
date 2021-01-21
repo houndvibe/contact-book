@@ -1,4 +1,9 @@
-import { FETCH_CONTACTS, ON_CONTACT_SELECT } from "../types";
+import {
+  FETCH_CONTACTS,
+  ON_CONTACT_SELECT,
+  ON_HANDLE_INFO_INPUT_CHANGE,
+  ON_EDITE_CONFIRM,
+} from "../types";
 
 export const fetchContacts = (data) => {
   return {
@@ -13,9 +18,41 @@ export const onContactSelect = (contact) => {
     phone: contact.phone,
     email: contact.email,
     website: contact.website,
-    address: contact.address,
     company: contact.company.name,
+    id: contact.id,
   };
 
   return { type: ON_CONTACT_SELECT, payload: selectedContact };
+};
+
+export const onHandleInfoInputChange = (title, id, newValue) => (
+  dispatch,
+  getState
+) => {
+  let active = {
+    ...getState().contacts.active,
+  };
+  active[title] = newValue;
+
+  return dispatch({
+    type: ON_HANDLE_INFO_INPUT_CHANGE,
+    payload: active,
+  });
+};
+
+export const onEditeConfirm = () => (dispatch, getState) => {
+  let active = {
+    ...getState().contacts.active,
+  };
+
+  let editedContactsList = [...getState().contacts.contactsList];
+
+  editedContactsList = editedContactsList.map(
+    (item) => (item = item.id === active.id ? active : item)
+  );
+
+  return dispatch({
+    type: ON_EDITE_CONFIRM,
+    payload: editedContactsList,
+  });
 };
