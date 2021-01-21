@@ -5,6 +5,7 @@ import {
   ON_EDITE_CONFIRM,
   ON_CONTACT_ADD,
   ON_FILTER,
+  ON_DELETE,
 } from "../types";
 
 const initialState = {
@@ -44,10 +45,18 @@ export default function contactsReducer(state = initialState, action) {
         ...state,
         contactsList: action.payload,
       };
+
     case ON_FILTER:
       return {
         ...state,
         filteredBy: action.payload,
+      };
+
+    case ON_DELETE:
+      return {
+        ...state,
+        contactsList: action.payload,
+        active: null,
       };
   }
   return state;
