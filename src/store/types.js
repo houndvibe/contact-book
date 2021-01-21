@@ -4,3 +4,4 @@ export const ON_HANDLE_INFO_INPUT_CHANGE = "ON_HANDLE_INFO_INPUT_CHANGE ";
 export const ON_EDITE_CONFIRM = "ON_EDITE_CONFIRM ";
 export const ON_CONTACT_ADD = "ON_CONTACT_ADD";
 export const ON_FILTER = "ON_FILTER";
+export const ON_DELETE = "ON_DELETE";

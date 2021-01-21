@@ -5,12 +5,14 @@ import Profile from "../components/ContactsInfo/Profile";
 import {
   onHandleInfoInputChange,
   onEditeConfirm,
+  onDelete,
 } from "../store/actions/contactsActions";
 
 function ContactsInfoWrapper({
   active,
   handleInfoInputChange,
   onEditeConfirm,
+  onDelete,
 }) {
   return (
     <div className="ContactsInfoWrapper">
@@ -18,6 +20,7 @@ function ContactsInfoWrapper({
         active={active}
         handleInfoInputChange={handleInfoInputChange}
         onEditeConfirm={onEditeConfirm}
+        onDelete={onDelete}
       />
     </div>
   );
@@ -31,6 +34,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(onHandleInfoInputChange(title, id, newValue)),
 
   onEditeConfirm: () => dispatch(onEditeConfirm()),
+  onDelete: () => dispatch(onDelete()),
 });
 
 export default connect(

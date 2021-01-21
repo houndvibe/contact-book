@@ -5,6 +5,7 @@ import {
   ON_EDITE_CONFIRM,
   ON_CONTACT_ADD,
   ON_FILTER,
+  ON_DELETE,
 } from "../types";
 
 export const fetchContacts = (data) => {
@@ -30,7 +31,7 @@ export const onHandleInfoInputChange = (title, id, newValue) => (
   dispatch,
   getState
 ) => {
-  let active = {
+  const active = {
     ...getState().contacts.active,
   };
   active[title] = newValue;
@@ -42,11 +43,11 @@ export const onHandleInfoInputChange = (title, id, newValue) => (
 };
 
 export const onEditeConfirm = () => (dispatch, getState) => {
-  let active = {
+  const active = {
     ...getState().contacts.active,
   };
 
-  let editedContactsList = [...getState().contacts.contactsList];
+  const editedContactsList = [...getState().contacts.contactsList];
 
   editedContactsList = editedContactsList.map(
     (item) => (item = item.id === active.id ? active : item)
@@ -59,9 +60,9 @@ export const onEditeConfirm = () => (dispatch, getState) => {
 };
 
 export const onContactAdd = () => (dispatch, getState) => {
-  let length = [...getState().contacts.contactsList].length;
+  const length = [...getState().contacts.contactsList].length;
 
-  let newContact = {
+  const newContact = {
     name: "",
     phone: "",
     email: "",
@@ -70,7 +71,7 @@ export const onContactAdd = () => (dispatch, getState) => {
     id: length,
   };
 
-  let editedContactsList = [...getState().contacts.contactsList];
+  const editedContactsList = [...getState().contacts.contactsList];
   editedContactsList.unshift(newContact);
 
   return dispatch({
@@ -80,9 +81,25 @@ export const onContactAdd = () => (dispatch, getState) => {
 };
 
 export const onFilter = (value) => {
-  console.log(value);
   return {
     type: ON_FILTER,
     payload: value,
   };
+};
+
+export const onDelete = () => (dispatch, getState) => {
+  const active = {
+    ...getState().contacts.active,
+  };
+
+  const activeId = active.id;
+
+  const fileredContactsList = [...getState().contacts.contactsList]
+    .filter((item) => item.id !== activeId)
+    .map((item, index) => (item = { ...item, id: index }));
+
+  return dispatch({
+    type: ON_DELETE,
+    payload: fileredContactsList,
+  });
 };

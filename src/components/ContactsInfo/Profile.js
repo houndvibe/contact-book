@@ -1,9 +1,8 @@
 import React from "react";
 import "../../css/Profile.css";
 import InfoLine from "../ContactsInfo/InfoLine";
-import ConfirmButton from "./ConfirmButton";
 
-function Profile({ active, handleInfoInputChange, onEditeConfirm }) {
+function Profile({ active, handleInfoInputChange, onEditeConfirm, onDelete }) {
   return (
     <div className="Profile">
       {active ? (
@@ -32,7 +31,12 @@ function Profile({ active, handleInfoInputChange, onEditeConfirm }) {
             data={active.website}
             handleInfoInputChange={handleInfoInputChange}
           />
-          <ConfirmButton onEditeConfirm={onEditeConfirm} />
+          <button className="Profile__button" onClick={() => onEditeConfirm()}>
+            Confirm editing
+          </button>
+          <button className="Profile__button" onClick={() => onDelete()}>
+            Delete contact
+          </button>
         </>
       ) : (
         <div className="Profile__Message">
