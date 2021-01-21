@@ -7,13 +7,7 @@
 .InfoLine__title_main {
   font-size: 20px;
 }
-.InfoLine__data {
-  margin: 10px;
-  border: 1px solid black;
-  padding: 4px;
-  border-radius: 4px;
-  background: rgba(128, 128, 128, 0.26);
-}
+
 .InfoLine__input {
   margin: 10px;
   border: 1px solid black;
@@ -28,5 +22,8 @@
   );
   width: 95%;
   font-size: 16px;
-  border: 1px solid rgba(88, 87, 87, 0.664);
+  border: 1px solid rgba(255, 255, 255, 0.664);
+}
+.empty {
+  color: rgba(255, 255, 255, 0.315);
 }

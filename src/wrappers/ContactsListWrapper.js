@@ -6,9 +6,10 @@ import { connect, useDispatch } from "react-redux";
 import {
   fetchContacts,
   onContactSelect,
+  onContactAdd,
 } from "../store/actions/contactsActions";
 
-function ContactsListWrapper({ contacts, onContactSelect }) {
+function ContactsListWrapper({ contacts, onContactSelect, onContactAdd }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function ContactsListWrapper({ contacts, onContactSelect }) {
 
   return (
     <div className="ContactsListWrapper">
-      <Toolbar />
+      <Toolbar onContactAdd={onContactAdd} />
       <ContactsList contactsList={contacts} onContactSelect={onContactSelect} />
     </div>
   );
@@ -32,6 +33,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchContacts: (data) => fetchContacts(data),
   onContactSelect: (contact) => dispatch(onContactSelect(contact)),
+  onContactAdd: () => dispatch(onContactAdd()),
 });
 
 export default connect(

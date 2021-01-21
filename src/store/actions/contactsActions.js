@@ -3,6 +3,7 @@ import {
   ON_CONTACT_SELECT,
   ON_HANDLE_INFO_INPUT_CHANGE,
   ON_EDITE_CONFIRM,
+  ON_CONTACT_ADD,
 } from "../types";
 
 export const fetchContacts = (data) => {
@@ -18,7 +19,6 @@ export const onContactSelect = (contact) => {
     phone: contact.phone,
     email: contact.email,
     website: contact.website,
-    company: contact.company.name,
     id: contact.id,
   };
 
@@ -53,6 +53,27 @@ export const onEditeConfirm = () => (dispatch, getState) => {
 
   return dispatch({
     type: ON_EDITE_CONFIRM,
+    payload: editedContactsList,
+  });
+};
+
+export const onContactAdd = () => (dispatch, getState) => {
+  let length = [...getState().contacts.contactsList].length;
+
+  let newContact = {
+    name: "",
+    phone: "",
+    email: "",
+    website: "",
+    company: "",
+    id: length,
+  };
+
+  let editedContactsList = [...getState().contacts.contactsList];
+  editedContactsList.unshift(newContact);
+
+  return dispatch({
+    type: ON_CONTACT_ADD,
     payload: editedContactsList,
   });
 };

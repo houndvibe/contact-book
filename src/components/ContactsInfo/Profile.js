@@ -32,12 +32,6 @@ function Profile({ active, handleInfoInputChange, onEditeConfirm }) {
             data={active.website}
             handleInfoInputChange={handleInfoInputChange}
           />
-          <InfoLine
-            id={active.id}
-            title="company"
-            data={active.company}
-            handleInfoInputChange={handleInfoInputChange}
-          />
           <ConfirmButton onEditeConfirm={onEditeConfirm} />
         </>
       ) : (
