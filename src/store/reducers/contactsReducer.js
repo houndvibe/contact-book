@@ -3,6 +3,7 @@ import {
   ON_CONTACT_SELECT,
   ON_HANDLE_INFO_INPUT_CHANGE,
   ON_EDITE_CONFIRM,
+  ON_CONTACT_ADD,
 } from "../types";
 
 const initialState = {
@@ -32,7 +33,12 @@ export default function contactsReducer(state = initialState, action) {
       };
 
     case ON_EDITE_CONFIRM:
-      console.log(1);
+      return {
+        ...state,
+        contactsList: action.payload,
+      };
+    case ON_CONTACT_ADD:
+      console.log("!!!");
       return {
         ...state,
         contactsList: action.payload,
