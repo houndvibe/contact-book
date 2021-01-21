@@ -4,10 +4,11 @@ import {
   ON_HANDLE_INFO_INPUT_CHANGE,
   ON_EDITE_CONFIRM,
   ON_CONTACT_ADD,
+  ON_FILTER,
 } from "../types";
 
 const initialState = {
-  filterBy: "disabled",
+  filteredBy: "",
   contactsList: [],
   active: null,
 };
@@ -37,11 +38,16 @@ export default function contactsReducer(state = initialState, action) {
         ...state,
         contactsList: action.payload,
       };
+
     case ON_CONTACT_ADD:
-      console.log("!!!");
       return {
         ...state,
         contactsList: action.payload,
+      };
+    case ON_FILTER:
+      return {
+        ...state,
+        filteredBy: action.payload,
       };
   }
   return state;

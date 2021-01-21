@@ -12,7 +12,7 @@ function Contact({ info, number, onContactSelect }) {
         {info.phone ? info.phone : "...Phone"}
       </div>
       <div className={`Contact__email ${info.email === "" ? "empty" : ""}`}>
-        {info.email ? info.phone : "...@email"}
+        {info.email ? info.email : "...@email"}
       </div>
     </div>
   );
