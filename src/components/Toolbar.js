@@ -4,8 +4,17 @@ import "../css/Toolbar.css";
 function Toolbar({ onContactAdd, onFilter }) {
   return (
     <div className="Toolbar">
-      <input onChange={(e) => onFilter(e.target.value)}></input>
-      <button onClick={() => onContactAdd()}>Add new contact</button>
+      <div>
+        {" "}
+        {"Filter: "}
+        <input
+          className="Toolbar__input"
+          onChange={(e) => onFilter(e.target.value)}
+        ></input>
+      </div>
+      <button className="Toolbar__button" onClick={() => onContactAdd()}>
+        ADD NEW CONTACT
+      </button>
     </div>
   );
 }
