@@ -4,6 +4,7 @@ import {
   ON_HANDLE_INFO_INPUT_CHANGE,
   ON_EDITE_CONFIRM,
   ON_CONTACT_ADD,
+  ON_FILTER,
 } from "../types";
 
 export const fetchContacts = (data) => {
@@ -76,4 +77,12 @@ export const onContactAdd = () => (dispatch, getState) => {
     type: ON_CONTACT_ADD,
     payload: editedContactsList,
   });
+};
+
+export const onFilter = (value) => {
+  console.log(value);
+  return {
+    type: ON_FILTER,
+    payload: value,
+  };
 };
