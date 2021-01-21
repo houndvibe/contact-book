@@ -14,3 +14,19 @@
   border-radius: 4px;
   background: rgba(128, 128, 128, 0.26);
 }
+.InfoLine__input {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 4px;
+  background: rgb(243, 245, 245);
+  background: linear-gradient(
+    90deg,
+    rgba(243, 245, 245, 0.582) 0%,
+    rgba(168, 177, 175, 0.425) 36%,
+    rgba(75, 85, 78, 0.404) 100%
+  );
+  width: 95%;
+  font-size: 16px;
+  border: 1px solid rgba(88, 87, 87, 0.664);
+}

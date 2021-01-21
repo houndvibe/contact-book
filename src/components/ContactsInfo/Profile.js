@@ -1,18 +1,44 @@
 import React from "react";
 import "../../css/Profile.css";
 import InfoLine from "../ContactsInfo/InfoLine";
+import ConfirmButton from "./ConfirmButton";
 
-function Profile({ active }) {
+function Profile({ active, handleInfoInputChange, onEditeConfirm }) {
   return (
     <div className="Profile">
-      {active.name ? (
+      {active ? (
         <>
-          <InfoLine title="Name" data={active.name} />
-          <InfoLine title="Phone" data={active.phone} />
-          <InfoLine title="@Email" data={active.email} />
-          <InfoLine title="Website" data={active.website} />
-          <InfoLine title="Company" data={active.company} />
-          <InfoLine title="Address" data={active.address} />
+          <InfoLine
+            id={active.id}
+            title="name"
+            data={active.name}
+            handleInfoInputChange={handleInfoInputChange}
+          />
+          <InfoLine
+            id={active.id}
+            title="phone"
+            data={active.phone}
+            handleInfoInputChange={handleInfoInputChange}
+          />
+          <InfoLine
+            id={active.id}
+            title="email"
+            data={active.email}
+            handleInfoInputChange={handleInfoInputChange}
+          />
+          <InfoLine
+            id={active.id}
+            title="website"
+            data={active.website}
+            handleInfoInputChange={handleInfoInputChange}
+          />
+          <InfoLine
+            id={active.id}
+            title="company"
+            data={active.company}
+            handleInfoInputChange={handleInfoInputChange}
+          />
+          <ConfirmButton onEditeConfirm={onEditeConfirm} />
         </>
       ) : (
         <div className="Profile__Message">
