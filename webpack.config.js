@@ -19,14 +19,14 @@ const babelLoaders = (extra) => {
 };
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./public/index.html"
+      template: "./public/index.html",
     }),
     new CleanWebpackPlugin(),
   ],
@@ -36,7 +36,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: "all"
+      chunks: "all",
     },
   },
 
@@ -92,6 +92,6 @@ module.exports = {
           },
         },
       },
-    ]
-  }
-}
+    ],
+  },
+};

@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/ContactsInfoWrapper.css";
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import Profile from "../components/ContactsInfo/Profile";
 import {
   onHandleInfoInputChange,
@@ -30,8 +30,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleInfoInputChange: (title, id, newValue) =>
-    dispatch(onHandleInfoInputChange(title, id, newValue)),
+  handleInfoInputChange: (title, newValue) =>
+    dispatch(onHandleInfoInputChange(title, newValue)),
 
   onEditeConfirm: () => dispatch(onEditeConfirm()),
   onDelete: () => dispatch(onDelete()),

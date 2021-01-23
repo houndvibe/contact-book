@@ -4,6 +4,7 @@
 .InfoLine__title {
   font-weight: bold;
 }
+
 .InfoLine__title_main {
   font-size: 20px;
 }
@@ -24,6 +25,7 @@
   font-size: 16px;
   border: 1px solid rgba(255, 255, 255, 0.664);
 }
+
 .empty {
   color: rgba(255, 255, 255, 0.315);
 }

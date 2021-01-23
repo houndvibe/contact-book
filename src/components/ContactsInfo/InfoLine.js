@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../css/InfoLine.css";
 
 function InfoLine({ title, data, handleInfoInputChange, id }) {
@@ -9,9 +9,7 @@ function InfoLine({ title, data, handleInfoInputChange, id }) {
         className="InfoLine__input"
         id={id}
         value={data}
-        onChange={(event) =>
-          handleInfoInputChange(title, id, event.target.value)
-        }
+        onChange={(event) => handleInfoInputChange(title, event.target.value)}
       />
     </div>
   );

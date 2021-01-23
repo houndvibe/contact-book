@@ -28,7 +28,7 @@ export const onContactSelect = (contact) => {
   return { type: ON_CONTACT_SELECT, payload: selectedContact };
 };
 
-export const onHandleInfoInputChange = (title, id, newValue) => (
+export const onHandleInfoInputChange = (title, newValue) => (
   dispatch,
   getState
 ) => {
@@ -81,13 +81,6 @@ export const onContactAdd = () => (dispatch, getState) => {
   });
 };
 
-export const onFilter = (value) => {
-  return {
-    type: ON_FILTER,
-    payload: value,
-  };
-};
-
 export const onDelete = () => (dispatch, getState) => {
   const active = {
     ...getState().contacts.active,
@@ -103,6 +96,13 @@ export const onDelete = () => (dispatch, getState) => {
     type: ON_DELETE,
     payload: fileredContactsList,
   });
+};
+
+export const onFilter = (value) => {
+  return {
+    type: ON_FILTER,
+    payload: value,
+  };
 };
 
 export const onSort = (value) => (dispatch, getState) => {

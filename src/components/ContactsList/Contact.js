@@ -2,12 +2,18 @@ import React from "react";
 import "../../css/Contact.css";
 
 function Contact({ info, number, onContactSelect, active }) {
+  // let name = info.name
+  // if(name.length>10){
+  //   name=name
+  // }
+
   return (
     <div
       className={`Contact ${
         active && active.id === info.id && "activeContact"
       }`}
       onClick={() => onContactSelect(info)}
+      onMouseDown={(event) => event.preventDefault()}
     >
       <div className="Contact__number">{`${number}.`}</div>
       <div className={`Contact__name ${info.name === "" ? "empty" : ""}`}>

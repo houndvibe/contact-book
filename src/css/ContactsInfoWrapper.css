@@ -1,7 +1,6 @@
 .ContactsInfoWrapper {
   background: rgb(140, 192, 240);
   width: 50%;
-  padding: 10px;
-  padding-bottom: 40px;
+  padding: 10px 10px 40px 10px;
   overflow: scroll;
 }

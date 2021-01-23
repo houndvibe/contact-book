@@ -48,17 +48,17 @@ export default function contactsReducer(state = initialState, action) {
         contactsList: action.payload,
       };
 
-    case ON_FILTER:
-      return {
-        ...state,
-        filteredBy: action.payload,
-      };
-
     case ON_DELETE:
       return {
         ...state,
         contactsList: action.payload,
         active: null,
+      };
+
+    case ON_FILTER:
+      return {
+        ...state,
+        filteredBy: action.payload,
       };
 
     case ON_SORT:
