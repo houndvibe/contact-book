@@ -6,6 +6,7 @@ import {
   ON_CONTACT_ADD,
   ON_FILTER,
   ON_DELETE,
+  ON_SORT,
 } from "../types";
 
 export const fetchContacts = (data) => {
@@ -101,5 +102,29 @@ export const onDelete = () => (dispatch, getState) => {
   return dispatch({
     type: ON_DELETE,
     payload: fileredContactsList,
+  });
+};
+
+export const onSort = (value) => (dispatch, getState) => {
+  let sortedContactsList = [...getState().contacts.contactsList];
+
+  switch (value) {
+    case "name":
+      sortedContactsList.sort((itemA, itemB) =>
+        itemA.name > itemB.name ? 1 : -1
+      );
+      break;
+    case "email":
+      sortedContactsList.sort((itemA, itemB) =>
+        itemA.email > itemB.email ? 1 : -1
+      );
+      break;
+    default:
+      break;
+  }
+
+  return dispatch({
+    type: ON_SORT,
+    payload: { value: value, sortedContactsList: sortedContactsList },
   });
 };

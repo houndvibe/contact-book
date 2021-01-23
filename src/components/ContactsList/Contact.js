@@ -2,7 +2,6 @@ import React from "react";
 import "../../css/Contact.css";
 
 function Contact({ info, number, onContactSelect, active }) {
-  console.log(active);
   return (
     <div
       className={`Contact ${
