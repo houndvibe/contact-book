@@ -13,12 +13,12 @@ import {
 
 function ContactsListWrapper({
   contacts,
+  active,
+  sortBy,
   filteredBy,
   onContactSelect,
   onContactAdd,
   onFilter,
-  active,
-  sortBy,
   onSort,
 }) {
   const dispatch = useDispatch();
