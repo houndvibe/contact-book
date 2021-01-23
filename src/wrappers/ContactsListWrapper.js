@@ -24,10 +24,22 @@ function ContactsListWrapper({
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("http://demo.sibers.com/users")
-      .then((response) => response.json())
-      .then((data) => dispatch(fetchContacts(data)));
-  }, [dispatch, fetchContacts]);
+    let storedContacts = JSON.parse(localStorage.getItem("ContactsList")) || [
+      "empty",
+    ];
+
+    if (storedContacts.length === 0 || storedContacts[0] === "empty") {
+      fetch("http://demo.sibers.com/users")
+        .then((response) => response.json())
+        .then((data) => dispatch(fetchContacts(data)));
+    } else {
+      dispatch(fetchContacts(storedContacts));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("ContactsList", JSON.stringify(contacts));
+  }, [contacts]);
 
   return (
     <div className="ContactsListWrapper">
