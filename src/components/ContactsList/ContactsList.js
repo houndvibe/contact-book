@@ -23,7 +23,7 @@ function ContactsList({ contactsList, onContactSelect, filteredBy, active }) {
       ))}
     </div>
   ) : (
-    <div className="ContactsList__sadMessage">No matches.</div>
+    <div className="ContactsList__sadMessage">Empty...</div>
   );
 }
 

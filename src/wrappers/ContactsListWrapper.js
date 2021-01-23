@@ -29,7 +29,7 @@ function ContactsListWrapper({
     ];
 
     if (storedContacts.length === 0 || storedContacts[0] === "empty") {
-      fetch("http://demo.sibers.com/users")
+      fetch("https://demo.sibers.com/users")
         .then((response) => response.json())
         .then((data) => dispatch(fetchContacts(data)));
     } else {
