@@ -6,10 +6,12 @@ import {
   ON_CONTACT_ADD,
   ON_FILTER,
   ON_DELETE,
+  ON_SORT,
 } from "../types";
 
 const initialState = {
   filteredBy: "",
+  sortBy: "disabled",
   contactsList: [],
   active: null,
 };
@@ -57,6 +59,13 @@ export default function contactsReducer(state = initialState, action) {
         ...state,
         contactsList: action.payload,
         active: null,
+      };
+
+    case ON_SORT:
+      return {
+        ...state,
+        sortBy: action.payload.value,
+        contactsList: action.payload.sortedContactsList,
       };
   }
   return state;

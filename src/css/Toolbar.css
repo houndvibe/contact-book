@@ -1,13 +1,15 @@
 .Toolbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   box-sizing: border-box;
   padding: 8px 8px 16px 8px;
   width: 96%;
   font-size: 20px;
 }
+
 .Toolbar__input,
-.Toolbar__button {
+.Toolbar__button,
+.Toolbar__select {
   border: 1px solid rgba(255, 255, 255, 0.637);
   background: rgb(255, 255, 255);
   border-radius: 2px;
@@ -20,7 +22,9 @@
 }
 .Toolbar__input:hover,
 .Toolbar__input:focus,
-.Toolbar__button:hover {
+.Toolbar__button:hover,
+.Toolbar__select:hover,
+.Toolbar__select:focus {
   background: rgb(140, 192, 240);
   color: white;
 }

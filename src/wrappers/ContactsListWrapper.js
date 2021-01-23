@@ -8,6 +8,7 @@ import {
   onContactSelect,
   onContactAdd,
   onFilter,
+  onSort,
 } from "../store/actions/contactsActions";
 
 function ContactsListWrapper({
@@ -17,6 +18,8 @@ function ContactsListWrapper({
   onContactAdd,
   onFilter,
   active,
+  sortBy,
+  onSort,
 }) {
   const dispatch = useDispatch();
 
@@ -28,7 +31,12 @@ function ContactsListWrapper({
 
   return (
     <div className="ContactsListWrapper">
-      <Toolbar onContactAdd={onContactAdd} onFilter={onFilter} />
+      <Toolbar
+        onContactAdd={onContactAdd}
+        onFilter={onFilter}
+        onSort={onSort}
+        sortBy={sortBy}
+      />
       <ContactsList
         contactsList={contacts}
         onContactSelect={onContactSelect}
@@ -43,6 +51,7 @@ const mapStateToProps = (state) => ({
   contacts: state.contacts.contactsList,
   filteredBy: state.contacts.filteredBy,
   active: state.contacts.active,
+  sortBy: state.contacts.sortBy,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -50,6 +59,7 @@ const mapDispatchToProps = (dispatch) => ({
   onContactSelect: (contact) => dispatch(onContactSelect(contact)),
   onContactAdd: () => dispatch(onContactAdd()),
   onFilter: (value) => dispatch(onFilter(value)),
+  onSort: (value) => dispatch(onSort(value)),
 });
 
 export default connect(
