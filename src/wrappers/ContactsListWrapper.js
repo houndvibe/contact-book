@@ -16,6 +16,7 @@ function ContactsListWrapper({
   onContactSelect,
   onContactAdd,
   onFilter,
+  active,
 }) {
   const dispatch = useDispatch();
 
@@ -32,6 +33,7 @@ function ContactsListWrapper({
         contactsList={contacts}
         onContactSelect={onContactSelect}
         filteredBy={filteredBy}
+        active={active}
       />
     </div>
   );
@@ -40,6 +42,7 @@ function ContactsListWrapper({
 const mapStateToProps = (state) => ({
   contacts: state.contacts.contactsList,
   filteredBy: state.contacts.filteredBy,
+  active: state.contacts.active,
 });
 
 const mapDispatchToProps = (dispatch) => ({
