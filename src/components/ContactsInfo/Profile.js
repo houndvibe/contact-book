@@ -31,10 +31,16 @@ function Profile({ active, handleInfoInputChange, onEditeConfirm, onDelete }) {
             data={active.website}
             handleInfoInputChange={handleInfoInputChange}
           />
-          <button className="Profile__button" onClick={() => onEditeConfirm()}>
+          <button
+            className="Profile__button Profile__button_confirm"
+            onClick={() => onEditeConfirm()}
+          >
             Confirm editing
           </button>
-          <button className="Profile__button" onClick={() => onDelete()}>
+          <button
+            className="Profile__button Profile__button_delete"
+            onClick={() => onDelete()}
+          >
             Delete contact
           </button>
         </>

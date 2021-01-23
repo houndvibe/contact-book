@@ -2,7 +2,7 @@ import React from "react";
 import "../../css/ContactsList.css";
 import Contact from "../ContactsList/Contact";
 
-function ContactsList({ contactsList, onContactSelect, filteredBy }) {
+function ContactsList({ contactsList, onContactSelect, filteredBy, active }) {
   let filteredContactsList = contactsList.filter(
     (item) =>
       item.name.includes(filteredBy) ||
@@ -18,11 +18,12 @@ function ContactsList({ contactsList, onContactSelect, filteredBy }) {
           info={item}
           number={index + 1}
           onContactSelect={onContactSelect}
+          active={active}
         />
       ))}
     </div>
   ) : (
-    <div className="ContactsList__sadMessage">o matches.</div>
+    <div className="ContactsList__sadMessage">No matches.</div>
   );
 }
 

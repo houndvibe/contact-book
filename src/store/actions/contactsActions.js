@@ -47,7 +47,7 @@ export const onEditeConfirm = () => (dispatch, getState) => {
     ...getState().contacts.active,
   };
 
-  const editedContactsList = [...getState().contacts.contactsList];
+  let editedContactsList = [...getState().contacts.contactsList];
 
   editedContactsList = editedContactsList.map(
     (item) => (item = item.id === active.id ? active : item)
